@@ -1,0 +1,7 @@
+{
+    "name": "IMV Laboratory RESTFUL API",
+    "description": "API to provide special data request of IMV Laboratory",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
+    "keywords": ["node", "express", "heroku"],
+    "image": "heroku/nodejs"
+}
