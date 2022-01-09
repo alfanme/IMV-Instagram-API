@@ -6,7 +6,7 @@ const cookiesPath = 'cookies.txt';
 module.exports = async function checkFollower(usernameToCheck) {
     const start = await Date.now();
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
     const context = browser.defaultBrowserContext();
