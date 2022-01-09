@@ -6,8 +6,15 @@ const cookiesPath = 'cookies.txt';
 module.exports = async function checkFollower(usernameToCheck) {
     const start = await Date.now();
     const browser = await puppeteer.launch({
+        headless: false,
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
+    const context = browser.defaultBrowserContext();
+    context.overridePermissions('https://www.instagram.com', [
+        'geolocation',
+        'notifications',
+    ]);
+
     const page = await browser.newPage();
 
     // If the cookies file exists, read the cookies.
@@ -42,6 +49,7 @@ module.exports = async function checkFollower(usernameToCheck) {
     await page.goto(`https://www.instagram.com/${usernameToCheck}`, {
         waitUntil: 'networkidle0',
     });
+
     const followBackButton = await page.$x(
         "//button[contains(text(), 'Follow Back')]"
     );
