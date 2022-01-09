@@ -5,7 +5,9 @@ const cookiesPath = 'cookies.txt';
 
 module.exports = async function checkFollower(usernameToCheck) {
     const start = await Date.now();
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     const page = await browser.newPage();
 
     // If the cookies file exists, read the cookies.
@@ -44,7 +46,7 @@ module.exports = async function checkFollower(usernameToCheck) {
         "//button[contains(text(), 'Follow Back')]"
     );
 
-    // await browser.close();
+    await browser.close();
     const end = await Date.now();
     await console.log(`DONE in ${(end - start) / 1000} second.`);
 
