@@ -1,6 +1,7 @@
 {
-    "name": "IMV Laboratory RESTFUL API",
+    "name": "follower_checker_api",
     "description": "API to provide special data request of IMV Laboratory",
+    "repository": "https://github.com/alfanme/IMV-Instagram-API.git",
     "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
     "keywords": ["node", "express", "heroku"],
     "image": "heroku/nodejs"

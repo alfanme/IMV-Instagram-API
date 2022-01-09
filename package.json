@@ -14,5 +14,14 @@
         "dotenv": "^10.0.0",
         "express": "^4.17.2",
         "puppeteer": "^13.0.1"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alfanme/IMV-Instagram-API.git"
+    },
+    "keywords": [
+        "node",
+        "heroku",
+        "express"
+    ]
 }
